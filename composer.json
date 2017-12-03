@@ -1,0 +1,25 @@
+{
+  "name": "evaldaskocys/travelling-salesman-problem-php",
+  "description": "Travelling salesman problem implementation in PHP.",
+  "type": "library",
+  "keywords": [
+    "discrete optimization",
+    "operations research"
+  ],
+  "homepage": "https://github.com/evaldaskocys/travelling-salesman-problem-php",
+  "authors": [
+    {
+      "name": "Evaldas Kocys",
+      "email": "evaldas.kocys@gmail.com",
+      "role": "software engineer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "TSP\\": ""
+    }
+  },
+  "require": {
+    "phpunit/phpunit": "^6.4"
+  }
+}
