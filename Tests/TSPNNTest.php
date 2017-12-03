@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-class TSPTest extends TestCase
+class TSPNNTest extends TestCase
 {
     public function testNN1()
     {

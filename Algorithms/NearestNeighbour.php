@@ -15,6 +15,10 @@ class NearestNeighbour implements AlgorithmInterface
      */
     public function getTour(array $edges, $size, $order)
     {
+        if (!$order) {
+            return null;
+        }
+
         $v = 0;
         $tour = [];
 
@@ -49,7 +53,7 @@ class NearestNeighbour implements AlgorithmInterface
                 ($minDistance == 0 || $edges[$i]->getWeight() < $minDistance) &&
                 (
                     !$this->tourContains($tour, $t, $edges[$i]) ||
-                    ($t+1 == $order && $edges[$i]->getFirst() == $edges[0]->getFirst())
+                    ($t == $order - 1 && $edges[$i]->getFirst() == $edges[0]->getFirst()) /* It's the last edge */
                 )
             ) {
                 $minDistance = $edges[$i]->getWeight();
