@@ -104,6 +104,16 @@ class TSP
     }
 
     /**
+     * Returns tour
+     *
+     * @return array
+     */
+    public function getTour()
+    {
+        return $this->tour;
+    }
+
+    /**
      * @param int $vertex
      */
     private function insertToVerticesIfNotPresent($vertex)
