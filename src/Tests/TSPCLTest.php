@@ -38,7 +38,7 @@ class TSPCLTest extends TestCase
         $this->tsp->calculateTour();
 
         $this->assertEquals('(0, 4, 16) (1, 5, 17) (2, 3, 18) (0, 2, 19) (1, 4, 27) (3, 5, 32) ',
-            $this->tsp->getEdges());
+            $this->tsp->getEdgesString());
 
         $this->assertEquals(129, $this->tsp->getTotalWeight());
     }
@@ -59,7 +59,7 @@ class TSPCLTest extends TestCase
         $this->tsp->calculateTour();
 
         $this->assertEquals('(1, 4, 2) (2, 3, 3) (0, 3, 4) (1, 2, 7) (0, 4, 11) ',
-            $this->tsp->getEdges());
+            $this->tsp->getEdgesString());
 
         $this->assertEquals(27, $this->tsp->getTotalWeight());
     }

@@ -60,7 +60,7 @@ class TSP
      *
      * @return string
      */
-    public function getEdges()
+    public function getEdgesString()
     {
         $string = '';
 
@@ -69,6 +69,14 @@ class TSP
         }
 
         return $string;
+    }
+
+    /**
+     * @return array
+     */
+    public function getEdges()
+    {
+        return $this->edges;
     }
 
     /**

@@ -38,7 +38,7 @@ class TSPNNTest extends TestCase
         $this->tsp->calculateTour();
 
         $this->assertEquals('(0, 4, 16) (3, 4, 19) (2, 3, 18) (2, 5, 23) (1, 5, 17) (0, 1, 25) ',
-            $this->tsp->getEdges());
+            $this->tsp->getEdgesString());
 
         $this->assertEquals(118, $this->tsp->getTotalWeight());
     }
@@ -59,7 +59,7 @@ class TSPNNTest extends TestCase
         $this->tsp->calculateTour();
 
         $this->assertEquals('(0, 3, 4) (2, 3, 3) (1, 2, 7) (1, 4, 2) (0, 4, 11) ',
-            $this->tsp->getEdges());
+            $this->tsp->getEdgesString());
 
         $this->assertEquals(27, $this->tsp->getTotalWeight());
     }

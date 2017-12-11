@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 use TSP\Algorithms\BruteForce;
 use TSP\TSP;
 
-class TSPNNTest extends TestCase
+class TSPBFTest extends TestCase
 {
     /** @var TSP */
     private $tsp;
@@ -30,7 +30,7 @@ class TSPNNTest extends TestCase
         $this->tsp->calculateTour();
 
         $this->assertEquals('(0, 1, 10) (1, 2, 7) (2, 3, 3) (0, 3, 4) ',
-            $this->tsp->getEdges());
+            $this->tsp->getEdgesString());
 
         $this->assertEquals(24, $this->tsp->getTotalWeight());
     }
@@ -56,7 +56,7 @@ class TSPNNTest extends TestCase
         $this->tsp->calculateTour();
 
         $this->assertEquals('(0, 1, 25) (1, 5, 17) (2, 5, 23) (2, 3, 18) (3, 4, 19) (0, 4, 16) ',
-            $this->tsp->getEdges());
+            $this->tsp->getEdgesString());
 
         $this->assertEquals(118, $this->tsp->getTotalWeight());
     }
