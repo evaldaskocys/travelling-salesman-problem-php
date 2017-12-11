@@ -1,15 +1,25 @@
 <?php
 
+namespace TSP\Tests;
+
 use PHPUnit\Framework\TestCase;
+use TSP\Algorithms\CheapestLink;
+use TSP\TSP;
 
 class TSPCLTest extends TestCase
 {
-    public function testCL()
-    {
-        $algorithm = new \TSP\Algorithms\CheapestLink();
-        $tsp = new \TSP\TSP($algorithm);
+    /** @var TSP */
+    private $tsp;
 
-        $tsp->weightedEdgeConnect(0, 1, 25)
+    public function setUp()
+    {
+        $algorithm = new CheapestLink();
+        $this->tsp = new TSP($algorithm);
+    }
+
+    public function testCL1()
+    {
+        $this->tsp->weightedEdgeConnect(0, 1, 25)
             ->weightedEdgeConnect(0, 2, 19)
             ->weightedEdgeConnect(0, 3, 19)
             ->weightedEdgeConnect(0, 4, 16)
@@ -25,20 +35,17 @@ class TSPCLTest extends TestCase
             ->weightedEdgeConnect(3, 5, 32)
             ->weightedEdgeConnect(4, 5, 41);
 
-        $tsp->calculateTour();
+        $this->tsp->calculateTour();
 
         $this->assertEquals('(0, 4, 16) (1, 5, 17) (2, 3, 18) (0, 2, 19) (1, 4, 27) (3, 5, 32) ',
-            $tsp->getEdges());
+            $this->tsp->getEdges());
 
-        $this->assertEquals(129, $tsp->getTotalWeight());
+        $this->assertEquals(129, $this->tsp->getTotalWeight());
     }
 
     public function testCL2()
     {
-        $algorithm = new \TSP\Algorithms\CheapestLink();
-        $tsp = new \TSP\TSP($algorithm);
-
-        $tsp->weightedEdgeConnect(0, 1, 10)
+        $this->tsp->weightedEdgeConnect(0, 1, 10)
             ->weightedEdgeConnect(0, 2, 5)
             ->weightedEdgeConnect(0, 3, 4)
             ->weightedEdgeConnect(0, 4, 11)
@@ -49,12 +56,11 @@ class TSPCLTest extends TestCase
             ->weightedEdgeConnect(2, 4, 9)
             ->weightedEdgeConnect(3, 4, 8);
 
-        $tsp->calculateTour();
+        $this->tsp->calculateTour();
 
         $this->assertEquals('(1, 4, 2) (2, 3, 3) (0, 3, 4) (1, 2, 7) (0, 4, 11) ',
-            $tsp->getEdges());
+            $this->tsp->getEdges());
 
-        $this->assertEquals(27, $tsp->getTotalWeight());
-
+        $this->assertEquals(27, $this->tsp->getTotalWeight());
     }
 }
