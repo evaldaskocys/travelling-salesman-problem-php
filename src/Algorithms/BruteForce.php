@@ -65,7 +65,6 @@ class BruteForce implements AlgorithmInterface
 
     /**
      * @param array $perms
-     * @return int
      */
     private function calculateTotalWeight(array $perms)
     {
@@ -79,6 +78,7 @@ class BruteForce implements AlgorithmInterface
                     ($weightedEdge->getFirst() == $perms[$i+1] && $weightedEdge->getSecond() == $perms[$i])) {
                     $tour[] = $weightedEdge;
                     $weight += $weightedEdge->getWeight();
+                    break;
                 }
             }
         }
@@ -87,7 +87,5 @@ class BruteForce implements AlgorithmInterface
             $this->minWeight = $weight;
             $this->bestTour = $tour;
         }
-
-        return $weight;
     }
 }
