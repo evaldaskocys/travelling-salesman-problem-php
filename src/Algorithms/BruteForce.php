@@ -57,8 +57,8 @@ class BruteForce implements AlgorithmInterface
     private function permutations(array $items, array $perms = [])
     {
         if (empty($items)) { // if no items left to take
-            array_unshift($perms, 0);
-            array_push($perms, 0);
+            array_unshift($perms, $this->edges[0]->getFirst());
+            array_push($perms, $this->edges[0]->getFirst());
             $this->calculateTotalWeight($perms);
         }  else {
             for ($i = count($items) - 1; $i >= 0; --$i) { // for all remaining items
