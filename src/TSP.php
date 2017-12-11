@@ -72,6 +72,14 @@ class TSP
     }
 
     /**
+     * @return array
+     */
+    public function getVertices()
+    {
+        return $this->vertices;
+    }
+
+    /**
      * Returns all edges total weight
      *
      * @return string
@@ -96,4 +104,13 @@ class TSP
             $this->vertices[] = $vertex;
         }
     }
+
+    /**
+     * @return string
+     */
+    public function getAlgorithmName()
+    {
+        return $this->algorithm->getName();
+    }
+
 }

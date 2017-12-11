@@ -53,6 +53,14 @@ class CheapestLink implements AlgorithmInterface
     }
 
     /**
+     * @inheritdoc
+     */
+    public function getName()
+    {
+        return 'Cheapest Link Algorithm';
+    }
+
+    /**
      * @param WeightedEdge $edge1
      * @param WeightedEdge $edge2
      * @return int

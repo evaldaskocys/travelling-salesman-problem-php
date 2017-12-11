@@ -14,4 +14,9 @@ interface AlgorithmInterface
      * @return WeightedEdge[]|null
      */
     public function getTour(array $edges, $size, $order);
+
+    /**
+     * @return string
+     */
+    public function getName();
 }

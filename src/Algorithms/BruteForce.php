@@ -43,6 +43,14 @@ class BruteForce implements AlgorithmInterface
     }
 
     /**
+     * @inheritdoc
+     */
+    public function getName()
+    {
+        return 'Brute Force Algorithm';
+    }
+
+    /**
      * @param array $items
      * @param array $perms
      */

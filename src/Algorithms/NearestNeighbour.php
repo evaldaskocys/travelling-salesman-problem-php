@@ -32,6 +32,14 @@ class NearestNeighbour implements AlgorithmInterface
     }
 
     /**
+     * @inheritdoc
+     */
+    public function getName()
+    {
+        return 'Nearest Neighbour Algorithm';
+    }
+
+    /**
      * Find the edge to v's nearest neighbour not in the tour already
      *
      * @param WeightedEdge[] $edges
