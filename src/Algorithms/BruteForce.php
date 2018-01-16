@@ -10,13 +10,13 @@ use TSP\WeightedEdge;
 class BruteForce implements AlgorithmInterface
 {
     /** @var array */
-    private $edges = [];
+    protected $edges = [];
 
     /** @var int */
-    private $minWeight = 0;
+    protected $minWeight = 0;
 
     /** @var array */
-    private $bestTour = [];
+    protected $bestTour = [];
 
     /**
      * @param WeightedEdge[] $edges
@@ -54,7 +54,7 @@ class BruteForce implements AlgorithmInterface
      * @param array $items
      * @param array $perms
      */
-    private function permutations(array $items, array $perms = [])
+    protected function permutations(array $items, array $perms = [])
     {
         if (empty($items)) { // if no items left to take
             array_unshift($perms, $this->edges[0]->getFirst());
@@ -74,7 +74,7 @@ class BruteForce implements AlgorithmInterface
     /**
      * @param array $perms
      */
-    private function calculateTotalWeight(array $perms)
+    protected function calculateTotalWeight(array $perms)
     {
         $weight = 0;
         $tour = [];
